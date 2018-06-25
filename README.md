@@ -1,5 +1,5 @@
 # GetMyDriver
-A web application that gives you nearest driver available for your ride.</br>
+A web application that gives you nearest driver available based on your current location for your ride.</br>
 
 This application is developed using Angular 6 and Spring Boot.</br>
 `getmydriver-ui` is the front end Angular application and `getmydriver` is the backend REST API service. </br>

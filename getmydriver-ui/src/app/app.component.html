@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to GetMyDriver!
+  </h1>
+   <label>Enter below details to get best available driver near to you</label>
+  <br>
+  <br>
+  <input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
+  <br>
+  <br>
+  <input type="text" [(ngModel)]="userCurrentLatitude" placeholder="Current Lattitude" />
+  <br>
+  <br>
+  <input type="text" [(ngModel)]="userCurrentLongitude" placeholder="Current Longitude" />
+  <button class="primary btn" type="button" (click)="findMe()">Get Location</button>
+  <br>
+  <br>
+  <button class="primary btn" type="button" (click)="getDriver()">Get Driver</button>
+  <br>
+  <br>
+  <p *ngIf="driverName">
+    <b>{{driverName}}</b> is available and coming to pick you...</p>
+  <div *ngIf="driverStatusResponse">
+    <div style="overflow-y:auto; height:250px;">
+      <table border="0" align="center">
+        <thead bgcolor="#00ace6">
+          <tr>
+            <th>Driver</th>
+            <th>Customer</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody bgcolor="#b3ecff">
+          <tr *ngFor="let driver of driverStatusResponse">
+            <td>{{driver.driverName}}</td>
+            <td>{{driver.customerName}}</td>
+            <td>{{driver.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
